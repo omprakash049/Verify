@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Unlock 💘</title>
 
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    font-family:'Segoe UI',sans-serif;
+    overflow:hidden;
+}
+.box{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    width:320px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+    z-index:2;
+}
+h2{color:#ff4d6d;}
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
+    margin-top:15px;
+}
+button{
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d6d;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* ❤️ Heart animation */
+.heart{
+    position:absolute;
+    bottom:-20px;
+    color:#ff4d6d;
+    font-size:20px;
+    animation: float 5s linear infinite;
+}
+@keyframes float{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Secret Love Password 💖</h2>
+    <p>Sirf wahi likhe jo dil se pyar karti ho 😉</p>
+
+    <input type="password" id="pass" placeholder="Enter password">
+    <button onclick="unlock()">Unlock</button>
+</div>
+
+<!-- 🎵 Romantic Music -->
+<audio id="music" src="music.mp3"></audio>
+
+<script>
+function unlock(){
+    let p = document.getElementById("pass").value.toLowerCase().trim();
+
+    if(p === "yes"){
+        document.getElementById("music").play();
+        startHearts();
+
+        // 💘 3 sec baad redirect
+        setTimeout(()=>{
+            window.location.href = "https://omprakash049.github.io/Val/";
+        },3000);
+    } else {
+        alert("❌ Wrong password! Dil se try karo 💔");
+    }
+}
+
+function startHearts(){
+    setInterval(()=>{
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random()*100 + "vw";
+        heart.style.fontSize = (15 + Math.random()*20) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),5000);
+    },300);
+}
+</script>
+
+</body>
+</html>
