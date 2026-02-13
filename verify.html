@@ -62,8 +62,8 @@ button{
 <body>
 
 <div class="box">
-    <h2>Secret Love Password 💖</h2>
-    <p>Sirf wahi likhe jo dil se pyar karti ho 😉</p>
+    <h1>Secret Love Password 💖</h1>
+    <h2>Aapke Past me jo bhi relation tha ydi usko aap bhul ke sirf mera hona chahti to hi aage page pr click kijiye otherwise skip this page</h2>
 
     <input type="password" id="pass" placeholder="Enter password">
     <button onclick="unlock()">Unlock</button>
@@ -76,7 +76,7 @@ button{
 function unlock(){
     let p = document.getElementById("pass").value.toLowerCase().trim();
 
-    if(p === "yes"){
+    if(p === "i love you"){
         document.getElementById("music").play();
         startHearts();
 
